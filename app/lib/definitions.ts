@@ -86,3 +86,19 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+
+// Note Types cho ứng dụng Note Online
+export type Note = {
+  id: string;
+  title: string;
+  content: string;
+  color: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type NoteInput = {
+  title: string;
+  content: string;
+  color?: string;
+};
