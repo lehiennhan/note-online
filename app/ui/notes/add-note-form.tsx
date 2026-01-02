@@ -9,12 +9,12 @@ interface AddNoteFormProps {
 }
 
 const COLORS = [
-  { name: 'Vàng', value: '#fef3c7' },
-  { name: 'Xanh lá', value: '#d1fae5' },
-  { name: 'Xanh dương', value: '#dbeafe' },
-  { name: 'Hồng', value: '#fce7f3' },
-  { name: 'Tím', value: '#e9d5ff' },
-  { name: 'Cam', value: '#fed7aa' },
+  { name: 'Mauve', value: '#cba6f7' },
+  { name: 'Teal', value: '#94e2d5' },
+  { name: 'Sky', value: '#89dceb' },
+  { name: 'Pink', value: '#f5c2e7' },
+  { name: 'Lavender', value: '#b4befe' },
+  { name: 'Peach', value: '#fab387' },
 ];
 
 export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
@@ -57,7 +57,7 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+        className="fixed bottom-8 right-8 bg-[#cba6f7] hover:bg-[#f5c2e7] text-[#1e1e2e] p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 font-bold"
         aria-label="Add note"
       >
         <MdAdd className="text-3xl" />
@@ -67,13 +67,13 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-2xl max-w-2xl w-full p-6">
-        <h2 className="text-2xl font-bold mb-4">Tạo ghi chú mới</h2>
+      <div className="bg-[#313244] rounded-lg shadow-2xl max-w-2xl w-full p-6 border border-[#45475a]">
+        <h2 className="text-2xl font-bold mb-4 text-[#cdd6f4]">Tạo ghi chú mới</h2>
 
         <form onSubmit={handleSubmit}>
           {/* Tiêu đề */}
           <div className="mb-4">
-            <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="title" className="block text-sm font-medium text-[#cdd6f4] mb-2">
               Tiêu đề
             </label>
             <input
@@ -81,7 +81,7 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-[#45475a] rounded-lg bg-[#45475a] text-[#cdd6f4] focus:ring-2 focus:ring-[#cba6f7] focus:border-transparent focus:outline-none"
               placeholder="Nhập tiêu đề..."
               maxLength={100}
             />
@@ -89,14 +89,14 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
 
           {/* Nội dung */}
           <div className="mb-4">
-            <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="content" className="block text-sm font-medium text-[#cdd6f4] mb-2">
               Nội dung
             </label>
             <textarea
               id="content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              className="w-full px-4 py-2 border border-[#45475a] rounded-lg bg-[#45475a] text-[#cdd6f4] focus:ring-2 focus:ring-[#cba6f7] focus:border-transparent focus:outline-none resize-none"
               placeholder="Nhập nội dung ghi chú..."
               rows={6}
             />
@@ -104,7 +104,7 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
 
           {/* Chọn màu */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#cdd6f4] mb-2">
               Chọn màu
             </label>
             <div className="flex gap-2 flex-wrap">
@@ -115,8 +115,8 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
                   onClick={() => setSelectedColor(color.value)}
                   className={`w-10 h-10 rounded-full border-2 transition-all ${
                     selectedColor === color.value
-                      ? 'border-blue-600 scale-110'
-                      : 'border-gray-300 hover:scale-105'
+                      ? 'border-[#cba6f7] scale-110'
+                      : 'border-[#45475a] hover:scale-105'
                   }`}
                   style={{ backgroundColor: color.value }}
                   aria-label={color.name}
@@ -131,7 +131,7 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+              className="px-6 py-2 border border-[#45475a] rounded-lg bg-[#45475a] text-[#cdd6f4] hover:bg-[#585b70] transition-colors"
               disabled={isSubmitting}
             >
               Hủy
@@ -139,7 +139,7 @@ export default function AddNoteForm({ onAddNote }: AddNoteFormProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed"
+              className="px-6 py-2 bg-[#cba6f7] hover:bg-[#f5c2e7] text-[#1e1e2e] rounded-lg transition-colors disabled:bg-[#a6adc8] disabled:cursor-not-allowed font-semibold"
             >
               {isSubmitting ? 'Đang lưu...' : 'Thêm ghi chú'}
             </button>

@@ -36,8 +36,8 @@ export function useNotes() {
             title: data.title,
             content: data.content,
             color: data.color,
-            createdAt: data.createdAt?.toDate() || new Date(),
-            updatedAt: data.updatedAt?.toDate() || new Date(),
+            createdAt: data.createdAt?.toMillis() || Date.now(),
+            updatedAt: data.updatedAt?.toMillis() || Date.now(),
           };
         });
         setNotes(notesData);

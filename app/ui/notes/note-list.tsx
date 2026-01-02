@@ -12,7 +12,7 @@ export default function NoteList({ notes, onDeleteNote }: NoteListProps) {
   if (notes.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500 text-lg">
+        <p className="text-[#6c7086] text-lg">
           Chưa có ghi chú nào. Hãy tạo ghi chú đầu tiên của bạn! 📝
         </p>
       </div>
