@@ -26,7 +26,7 @@ export default function NotesPage() {
                     📝 Note Online
                 </h1>
                 <p className="text-[#a6adc8]">
-                    Quản lý ghi chú của bạn một cách đơn giản và hiệu quả
+                    Manage your notes simply and effectively.
                 </p>
             </div>
             {/* Content */}

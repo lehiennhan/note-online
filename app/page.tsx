@@ -1,24 +1,39 @@
 'use client';
 
-import { Mail, Phone, Disc, Github, Download } from 'lucide-react';
+import { Mail, Phone, Github, Download, MessageCircle, Facebook } from 'lucide-react';
 
 export default function ProfilePage() {
   const skills = [
+    'C#',
     'TypeScript',
     'React',
+    'Vue',
     'Next.js',
+    'Nuxt.js',
     'Tailwind CSS',
     'Firebase',
     'Node.js',
+    'Express.js',
     'PostgreSQL',
     'Git',
+    'Go',
+    'Docker',
+    "Terraform",
+    "AWS",
+    "CI/CD",
+    "Gitlab CI/CD",
+    "ArgoCD",
+    "日本語",
+    "English",
+    "한국인",
   ];
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'lehiennhan2000@gmail.com', href: 'mailto:lehiennhan2000@gmail.com' },
-    { icon: Phone, label: 'Phone', value: '+84 (0) xxx xxx xxx', href: 'tel:+84902569407' },
-    { icon: Disc, label: 'Discord', value: 'blacksheep', href: 'https://discord.com' },
+    { icon: Phone, label: 'Phone', value: '+84 (0) 902 569 407', href: 'tel:+84902569407' },
+    { icon: MessageCircle, label: 'Discord', value: 'blacksheep', href: 'https://discord.com' },
     { icon: Github, label: 'GitHub', value: 'lehiennhan', href: 'https://github.com/lehiennhan' },
+    { icon: Facebook, label: 'Facebook', value: 'Nhan Le', href: 'https://facebook.com/gendeath' },
   ];
 
   return (
