@@ -47,7 +47,7 @@ export default function AddTodoForm({ onAddTodo }: AddTodoFormProps) {
           <button
             type="submit"
             disabled={!title.trim() || isSubmitting}
-            className="bg-[#cba6f7] text-[#1e1e2e] p-3 rounded-xl hover:bg-[#b4befe] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-bold px-6"
+            className="bg-[#cba6f7] text-[#1e1e2e] p-3 rounded-xl hover:bg-[#b4befe] transition-all disabled:cursor-not-allowed flex items-center gap-2 font-bold px-6"
           >
             <MdAdd className="text-xl" />
             <span className="hidden sm:inline">Thêm</span>
