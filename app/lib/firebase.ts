@@ -18,12 +18,12 @@ const firebaseConfig = {
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
 // Initialize App Check with reCAPTCHA
-if (typeof window !== 'undefined') {
-  initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''),
-    isTokenAutoRefreshEnabled: true,
-  });
-}
+// if (typeof window !== 'undefined') {
+//   initializeAppCheck(app, {
+//     provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''),
+//     isTokenAutoRefreshEnabled: true,
+//   });
+// }
 
 // Initialize Firestore
 export const db = getFirestore(app);
