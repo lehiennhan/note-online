@@ -18,7 +18,8 @@ export default function Navigation() {
         { href: '/json-formatter', icon: '📖', label: 'JSON Formatter' },
         { href: '/json-diff', icon: '⚖️', label: 'JSON Diff' },
         { href: '/csv-json-converter', icon: '🔄', label: 'CSV ↔ JSON' },
-        { href: '/xml-formatter', icon: '📝', label: 'XML Formatter' }
+        { href: '/xml-formatter', icon: '📝', label: 'XML Formatter' },
+        { href: '/sql-formatter', icon: '🗄️', label: 'SQL Formatter' }
     ];
 
     const isToolActive = tools.some(tool => pathname === tool.href);
