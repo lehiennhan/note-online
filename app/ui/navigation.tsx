@@ -54,6 +54,16 @@ export default function Navigation() {
                             📝 Note Online
                         </Link>
 
+                        <Link
+                            href="/todos"
+                            className={`px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${pathname === '/todos'
+                                    ? 'bg-[#cba6f7] text-[#1e1e2e] font-semibold'
+                                    : 'text-[#cdd6f4] hover:text-[#cba6f7] hover:bg-[#45475a]'
+                                }`}
+                        >
+                            ✅ Todo List
+                        </Link>
+
                         {/* Dropdown Menu */}
                         <div className="relative group">
                             <button
@@ -124,6 +134,17 @@ export default function Navigation() {
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             📝 Note Online
+                        </Link>
+
+                        <Link
+                            href="/todos"
+                            className={`block px-4 py-2 rounded-lg transition-colors ${pathname === '/todos'
+                                    ? 'bg-[#cba6f7] text-[#1e1e2e] font-semibold'
+                                    : 'text-[#cdd6f4] hover:text-[#cba6f7] hover:bg-[#45475a]'
+                                }`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            ✅ Todo List
                         </Link>
 
                         {/* Mobile Dropdown Toggle */}

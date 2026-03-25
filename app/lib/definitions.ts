@@ -13,3 +13,15 @@ export type NoteInput = {
   content: string;
   color?: string;
 };
+
+export type Todo = {
+  id: string;
+  title: string;
+  isCompleted: boolean;
+  createdAt: number;
+  updatedAt: number;
+};
+
+export type TodoInput = {
+  title: string;
+};
