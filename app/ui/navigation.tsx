@@ -17,7 +17,8 @@ export default function Navigation() {
         { href: '/uuid-generator', icon: '🆔', label: 'UUID Generator' },
         { href: '/json-formatter', icon: '📖', label: 'JSON Formatter' },
         { href: '/json-diff', icon: '⚖️', label: 'JSON Diff' },
-        { href: '/csv-json-converter', icon: '🔄', label: 'CSV ↔ JSON' }
+        { href: '/csv-json-converter', icon: '🔄', label: 'CSV ↔ JSON' },
+        { href: '/xml-formatter', icon: '📝', label: 'XML Formatter' }
     ];
 
     const isToolActive = tools.some(tool => pathname === tool.href);
