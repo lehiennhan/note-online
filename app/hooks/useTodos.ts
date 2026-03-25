@@ -10,22 +10,34 @@ import {
   onSnapshot,
   query,
   orderBy,
+  where,
   Timestamp,
 } from 'firebase/firestore';
 import { db } from '@/app/lib/firebase';
 import { Todo, TodoInput } from '@/app/lib/definitions';
 
-export function useTodos() {
+export function useTodos(selectedDate?: Date) {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   // Lấy danh sách todos từ Firebase (realtime)
   useEffect(() => {
-    const todosQuery = query(
-      collection(db, 'todos'),
-      orderBy('createdAt', 'desc')
-    );
+    let todosQuery = query(collection(db, 'todos'), orderBy('createdAt', 'desc'));
+
+    if (selectedDate) {
+      const start = new Date(selectedDate);
+      start.setHours(0, 0, 0, 0);
+      const end = new Date(selectedDate);
+      end.setHours(23, 59, 59, 999);
+
+      todosQuery = query(
+        collection(db, 'todos'),
+        where('createdAt', '>=', Timestamp.fromDate(start)),
+        where('createdAt', '<=', Timestamp.fromDate(end)),
+        orderBy('createdAt', 'desc')
+      );
+    }
 
     const unsubscribe = onSnapshot(
       todosQuery,
@@ -51,17 +63,24 @@ export function useTodos() {
     );
 
     return () => unsubscribe();
-  }, []);
+  }, [selectedDate]);
 
   // Thêm todo mới
   const addTodo = async (todoInput: TodoInput) => {
     try {
-      const now = Timestamp.now();
+      let now = new Date();
+      if (selectedDate && selectedDate.toDateString() !== new Date().toDateString()) {
+        now = new Date(selectedDate);
+        now.setHours(12, 0, 0, 0); // Đặt vào giữa ngày
+      }
+      
+      const timestamp = Timestamp.fromDate(now);
+
       await addDoc(collection(db, 'todos'), {
         title: todoInput.title,
         isCompleted: false,
-        createdAt: now,
-        updatedAt: now,
+        createdAt: timestamp,
+        updatedAt: Timestamp.now(),
       });
     } catch (err) {
       console.error('Error adding todo:', err);
