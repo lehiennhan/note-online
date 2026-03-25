@@ -12,7 +12,7 @@ interface TodoCardProps {
 export default function TodoCard({ todo, onDelete, onToggleStatus }: TodoCardProps) {
   return (
     <div
-      className={`relative p-3 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 bg-opacity-20 border border-opacity-30 flex items-center gap-2 ${
+      className={`relative p-2.5 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 bg-opacity-20 border border-opacity-30 flex items-center gap-2 ${
         todo.isCompleted 
           ? 'bg-[#a6e3a1] border-[#a6e3a1] opacity-60' 
           : 'bg-[#cba6f7] border-[#cdd6f4]'
