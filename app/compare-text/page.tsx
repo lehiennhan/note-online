@@ -19,7 +19,7 @@ export default function CompareTextPage() {
 
     const handleScroll = (
         event: React.UIEvent<HTMLTextAreaElement>,
-        lineRef: React.RefObject<HTMLDivElement>
+        lineRef: React.RefObject<HTMLDivElement | null>
     ) => {
         if (lineRef.current && event.currentTarget) {
             lineRef.current.scrollTop = event.currentTarget.scrollTop;
@@ -34,7 +34,6 @@ export default function CompareTextPage() {
     const getDifferentLines = (text: string) => {
         const lines1 = text1.split('\n');
         const lines2 = text2.split('\n');
-        const textLines = text.split('\n');
         const differentLines = new Set<number>();
 
         const maxLength = Math.max(lines1.length, lines2.length);

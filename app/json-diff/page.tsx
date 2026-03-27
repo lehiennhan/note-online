@@ -21,7 +21,7 @@ export default function JSONDiff() {
 
     const handleScroll = (
         event: React.UIEvent<HTMLTextAreaElement>,
-        lineRef: React.RefObject<HTMLDivElement>
+        lineRef: React.RefObject<HTMLDivElement | null>
     ) => {
         if (lineRef.current && event.currentTarget) {
             lineRef.current.scrollTop = event.currentTarget.scrollTop;
