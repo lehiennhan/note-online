@@ -20,7 +20,8 @@ export default function Navigation() {
         { href: '/csv-json-converter', icon: '🔄', label: 'CSV ↔ JSON' },
         { href: '/xml-formatter', icon: '📝', label: 'XML Formatter' },
         { href: '/sql-formatter', icon: '🗄️', label: 'SQL Formatter' },
-        { href: '/markdown-to-html', icon: '📑', label: 'Md to Html' }
+        { href: '/markdown-to-html', icon: '📑', label: 'Md to Html' },
+        { href: '/qr-code-generator', icon: '📱', label: 'QR Generator' }
     ];
 
     const isToolActive = tools.some(tool => pathname === tool.href);
